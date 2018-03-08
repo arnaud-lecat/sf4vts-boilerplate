@@ -25,6 +25,7 @@
         "build": "encore production"
     },
     "dependencies": {
-        "vue": "^2.5.9"
+        "vue": "^2.5.9",
+        "vue-cookie-law": "^1.4.0"
     }
 }

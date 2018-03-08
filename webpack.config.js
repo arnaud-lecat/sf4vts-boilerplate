@@ -11,7 +11,7 @@ Encore.setOutputPath('public/build/')
     .cleanupOutputBeforeBuild()
     .addEntry('js/app', [
         './assets/js/app.js',
-        './assets/vue/main.js'
+        './assets/js/vue/main.js'
     ])
     .addStyleEntry('css/app', './assets/scss/app.scss')
     .enableSassLoader(function (sassOptions){}, {
@@ -31,7 +31,7 @@ if(Encore.isProduction()) {
         .addPlugin(new PurgeCssPlugin({
             paths: Glob.sync([
                 Path.join(__dirname, "templates/**/*.twig"),
-                Path.join(__dirname, "assets/vue/**/*.vue"),
+                Path.join(__dirname, "assets/js/vue/**/*.vue"),
                 Path.join(__dirname, "assets/js/**/*.js")
             ]),
             extractors: [

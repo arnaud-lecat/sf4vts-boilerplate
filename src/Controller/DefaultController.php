@@ -18,8 +18,8 @@ class DefaultController extends Controller
     /**
      * @Route("/")
      */
-    public function index()
+    public function homepage()
     {
-        return $this->render('default/index.html.twig');
+        return $this->render('default/homepage.html.twig');
     }
 }

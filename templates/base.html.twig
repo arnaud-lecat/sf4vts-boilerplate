@@ -2,37 +2,33 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" type="image/png" href="" />
+        <title>{% block title %}SF4VTS Boilerplate{% endblock %}</title>
+        <meta name="description" content="">
+        <meta name="author" content="">
         {% block stylesheets %}
-        <link href="{{ asset('build/css/app.css') }}" rel="stylesheet">
+            <link rel="stylesheet" href="{{ asset('build/css/app.css') }}">
         {% endblock %}
+
+        <!--[if lt IE 9]>
+        <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
     </head>
     <body>
+        <header class="SiteHeader">
+            header
+        </header>
 
-        {% block header %}
-        {{ include('default/_nav.html.twig') }}
-        {% endblock %}
+        <div class="BodyLayout">
+            <h1>SF4VTS Boilerplate</h1>
+            {% block body %}{% endblock %}
+        </div>
 
-        {% block body %}
-            <div class="max-auto rounded overflow-hidden shadow-lg">
-                <div class="px-6 py-4">
-                    <h1 class="text-grey-darkest">Welcome</h1>
-                    <p>Tailwind : <span class="text-green">Ok</span></p>
-                    {% verbatim %}
-                    <div id="app"></div>
-                    <!-- built files will be auto injected -->
-                    {% endverbatim %}
-                </div>
-            </div>
-        {% endblock %}
-
-        {% block footer %}
-        {{ include('default/_footer.html.twig') }}
-        {% endblock %}
-
+        <footer class="SiteFooter">
+            footer
+            <div id="CookieLaw"></div>
+        </footer>
         {% block javascripts %}
-        <script src="{{ asset('build/js/app.js') }}"></script>
+            <script src="{{ asset('build/js/app.js') }}"></script>
         {% endblock %}
     </body>
 </html>
