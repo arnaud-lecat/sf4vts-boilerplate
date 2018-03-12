@@ -1,6 +1,6 @@
 <template>
     <div id="CookieLaw">
-        <cookie-law></cookie-law>
+        <cookie-law theme="sf4vts"></cookie-law>
     </div>
 </template>
 <script>

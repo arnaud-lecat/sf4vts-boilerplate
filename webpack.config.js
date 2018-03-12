@@ -9,10 +9,7 @@ let FaviconsWebpackPlugin   = require('favicons-webpack-plugin');
 Encore.setOutputPath('public/build/')
     .setPublicPath('/build')
     .cleanupOutputBeforeBuild()
-    .addEntry('js/app', [
-        './assets/js/app.js',
-        './assets/js/vue/main.js'
-    ])
+    .addEntry('js/app', './assets/js/app.js')
     .addStyleEntry('css/app', './assets/scss/app.scss')
     .enableSassLoader(function (sassOptions){}, {
         resolveUrlLoader: false
@@ -31,8 +28,8 @@ if(Encore.isProduction()) {
         .addPlugin(new PurgeCssPlugin({
             paths: Glob.sync([
                 Path.join(__dirname, "templates/**/*.twig"),
-                Path.join(__dirname, "assets/js/vue/**/*.vue"),
-                Path.join(__dirname, "assets/js/**/*.js")
+                Path.join(__dirname, "assets/js/**/*.js"),
+                Path.join(__dirname, "assets/js/**/*.vue")
             ]),
             extractors: [
                 {

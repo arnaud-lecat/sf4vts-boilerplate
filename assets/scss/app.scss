@@ -48,6 +48,16 @@ h1, h2, h3, h4, h5, h6, p {
     @apply .mb-4;
 }
 
+.Cookie--sf4vts {
+    @apply .bg-grey .p-8;
+}
+
+.Cookie--sf4vts .Cookie__content {
+    @apply .text-white;
+}
+.Cookie--sf4vts .Cookie__button {
+    @apply .bg-blue .text-white .font-bold .py-2 .px-4 .rounded;
+}
 /**
  * Here you would add any custom utilities you need that don't come out of the
  * box with Tailwind.
