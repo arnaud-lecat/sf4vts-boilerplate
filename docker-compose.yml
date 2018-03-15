@@ -1,0 +1,25 @@
+# docker-compose.yaml
+version: '3'
+
+services:
+    app:
+        build:   { context: . }
+        ports:   [ '8000:8000' ]
+        links:   [ database ]
+        volumes: [ '.:/www' ]
+
+    database:
+        image: mariadb
+        restart: always
+        volumes:
+            - ./mysql:/var/lib/mysql
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_USER: admin
+            MYSQL_PASSWORD: test
+            MYSQL_DATABASE: sf4vts
+        ports:
+            - "8889:3306"
+
+volumes:
+    database: ~

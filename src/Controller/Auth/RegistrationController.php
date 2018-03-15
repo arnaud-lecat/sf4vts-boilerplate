@@ -10,25 +10,25 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 class RegistrationController extends Controller
 {
     /**
-     * @Route("/register", name="owner_registration")
+     * @Route("/register", name="user_registration")
      */
     public function registerAction(Request $request, UserPasswordEncoderInterface $passwordEncoder)
     {
         // 1) build the form
-        $owner = new Owner();
-        $form = $this->createForm(OwnerType::class, $owner);
+        $user = new User();
+        $form = $this->createForm(User::class, $user);
 
         // 2) handle the submit (will only happen on POST)
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
 
             // 3) Encode the password (you could also do this via Doctrine listener)
-            $password = $passwordEncoder->encodePassword($owner, $owner->getPlainPassword());
-            $owner->setPassword($password);
+            $password = $passwordEncoder->encodePassword($user, $user->getPlainPassword());
+            $user->setPassword($password);
 
             // 4) save the User!
             $em = $this->getDoctrine()->getManager();
-            $em->persist($owner);
+            $em->persist($user);
             $em->flush();
 
             // ... do any other work - like sending them an email, etc

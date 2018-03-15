@@ -1,8 +1,43 @@
 {% extends "default.html.twig" %}
 
 {% block main_content %}
-<section>
-    <h1>SF4VTS Boilerplate</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis mi ut risus sollicitudin vulputate. Cras feugiat, nunc id mollis venenatis, nisi turpis rhoncus erat, non fringilla tellus dolor at lectus. Proin eu mauris sed nibh finibus condimentum. Curabitur vitae risus volutpat, bibendum quam vitae, gravida eros.</p>
-</section>
+    <section>
+        <h1>SF4VTS Boilerplate</h1>
+        <p>Généralement, on utilise un texte en faux latin (le texte ne veut rien dire, il a été modifié), le Lorem ipsum ou Lipsum, qui permet donc de faire office de texte d'attente. L'avantage de le mettre en latin est que l'opérateur sait au premier coup d'oeil que la page contenant ces lignes n'est pas valide, et surtout l'attention du client n'est pas dérangée par le contenu, il demeure concentré seulement sur l'aspect graphique.</p>
+
+        <p>Ce texte a pour autre avantage d'utiliser des mots de longueur variable, essayant de simuler une occupation normale. La méthode simpliste consistant à copier-coller un court texte plusieurs fois (« ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ») a l'inconvénient de ne pas permettre une juste appréciation typographique du résultat final.</p>
+
+        <p>Il circule des centaines de versions différentes du Lorem ipsum, mais ce texte aurait originellement été tiré de l'ouvrage de Cicéron, De Finibus Bonorum et Malorum (Liber Primus, 32), texte populaire à cette époque, dont l'une des premières phrases est : « Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit... » (« Il n'existe personne qui aime la souffrance pour elle-même, ni qui la recherche ni qui la veuille pour ce qu'elle est... »).</p>
+    </section>
+    <section>
+        <h2>Widgets</h2>
+        <div class="Box Box--information">
+            <div class="flex">
+                <div class="py-1">
+                    <img src="{{asset('build/images/zondicons/information-outline.svg')}}" class="Box__icon Box__icon--information">
+                </div>
+                <div>
+                    <p class="Box__title Box__title--information">Work in progress!</p>
+                    <p class="Box__content Box__content--information">Ceci est une boite d'information !</p>
+                </div>
+            </div>
+        </div>
+        <div class="Box Box--success">
+            <div class="flex">
+                <div class="py-1">
+                    <img src="{{asset('build/images/zondicons/information-outline.svg')}}" class="Box__icon Box__icon--success">
+                </div>
+                <div>
+                    <p class="Box__title">Work in progress!</p>
+                    <p class="Box__content">Ceci est une boite d'information !</p>
+                </div>
+            </div>
+        </div>
+        <div class="Box Box--warning">
+            Ceci est une boite méritant votre attention !
+        </div>
+        <div class="Box Box--error">
+            Ceci est une boite de danger !
+        </div>
+    </section>
 {% endblock %}

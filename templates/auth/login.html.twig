@@ -1,21 +1,41 @@
 {% extends 'default.html.twig' %}
 
-{% block main_content %}
+{% block main %}
 {% if error %}
-    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    <div class="Box Box--error">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
 {% endif %}
 
-<form action="{{ path('login') }}" method="post">
-    <div class="mb-4">
-        <label for="username">Username</label>
-        <input type="text" id="username" name="_username" value="{{ last_username }}" />
-    </div>
+<div class="container mx-auto h-full flex justify-center items-center">
+    <div class="w-1/3">
+        <h1 class="font-hairline mb-6 text-center">Connectez-vous...</h1>
+        <div class="border-teal p-8 border-t-12 bg-white mb-6 rounded-lg shadow-lg">
+            <form action="{{ path('login') }}" method="post">
+                <div class="mb-4">
+                    <label class="font-bold text-grey-darker block mb-2">Nom d'utilisateur ou adresse email</label>
+                    <input type="text" class="block appearance-none w-full bg-white border border-grey-light hover:border-grey px-2 py-2 rounded shadow" placeholder="Nom d'utilisateur ou adresse email">
+                    <input type="text" id="username" name="_username" value="{{ username }}" />
+                </div>
 
-    <div class="mb-4">
-        <label for="password">Password</label>
-        <input type="password" id="password" name="_password" />
-    </div>
+                <div class="mb-4">
+                    <label class="font-bold text-grey-darker block mb-2">Mot de passe</label>
+                    <input type="text" class="block appearance-none w-full bg-white border border-grey-light hover:border-grey px-2 py-2 rounded shadow" placeholder="Mot de passe">
+                    <input type="password" id="password" name="_password" />
+                </div>
 
-    <button type="submit" class="btn btn-blue">login</button>
-</form>
+                <div class="flex items-center justify-between">
+                    <button class="bg-teal-dark hover:bg-teal text-white font-bold py-2 px-4 rounded">
+                        Connexion
+                    </button>
+
+                    <a class="no-underline inline-block align-baseline font-bold text-sm text-blue hover:text-blue-dark float-right" href="#">
+                        Mot passe oublié ?
+                    </a>
+                </div>
+            </form>
+        </div>
+        <div class="text-center">
+            <p class="text-grey-dark text-sm">Pas encore de compte ? <a href="#" class="no-underline text-blue font-bold">Créer un compte</a>.</p>
+        </div>
+    </div>
+</div>
 {% endblock %}

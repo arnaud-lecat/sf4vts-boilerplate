@@ -4,6 +4,7 @@ let Path                    = require('path');
 let ExtractTextPlugin       = require("extract-text-webpack-plugin");
 let PurgeCssPlugin          = require('purgecss-webpack-plugin');
 let FaviconsWebpackPlugin   = require('favicons-webpack-plugin');
+let CopyWebpackPlugin       = require('copy-webpack-plugin');
 
 // https://github.com/FullHuman/purgecss#extractor
 Encore.setOutputPath('public/build/')
@@ -21,7 +22,16 @@ Encore.setOutputPath('public/build/')
     })
     .enableVersioning(Encore.isProduction())
     .enableSourceMaps(!Encore.isProduction())
-    .enableVueLoader();
+    .enableVueLoader()
+    .addPlugin(
+        new CopyWebpackPlugin([
+            {
+                from: 'node_modules/@icon/zondicons/icons/**/*',
+                to: 'images/zondicons',
+                flatten: true
+            }
+        ])
+    );
 
 if(Encore.isProduction()) {
     Encore.addPlugin(new ExtractTextPlugin("css/app.css"))

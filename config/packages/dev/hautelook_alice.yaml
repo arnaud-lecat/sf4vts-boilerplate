@@ -1,0 +1,9 @@
+hautelook_alice:
+    fixtures_path: fixtures
+
+fidry_alice_data_fixtures:
+    db_drivers: { doctrine_orm: true }
+
+nelmio_alice:
+    locale: fr_FR
+    seed:   42

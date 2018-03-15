@@ -1,0 +1,7 @@
+# fixtures/User.yaml
+App\Entity\User:
+    User__{1..20}:
+        username: 'user'.$i
+        firstname: <name>
+        lastname: <last_name>
+        email: <eMail()>

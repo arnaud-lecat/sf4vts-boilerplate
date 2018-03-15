@@ -1,0 +1,24 @@
+.Box {
+    @apply .border-l-4 .px-4 .py-3 .mb-4 .bg-no-repeat;
+    &--information {
+        @apply .bg-blue-lightest .border-blue-light .text-blue-darker;
+    }
+    &--success {
+        @apply .bg-green-lightest .border-green-light .text-green-darker;
+    }
+    &--warning {
+        @apply .bg-yellow-lightest .border-yellow-light .text-yellow-darker;
+    }
+    &--error {
+        @apply .bg-red-lightest .border-red-light .text-red-darker;
+    }
+    &__icon {
+        @apply .fill-current .stroke-current .h-6 .w-6 .mr-4;
+        &--information { @apply .text-blue-light; }
+        &--success { @apply .text-green-light; }
+        &--warning { @apply .text-yellow-light; }
+        &--error { @apply .text-red-light; }
+    }
+    &__title { @apply .font-semibold; }
+    &__content { @apply .text-sm; }
+}

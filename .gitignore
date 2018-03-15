@@ -5,6 +5,7 @@
 /var/
 /vendor/
 /public/build/
+/mysql/
 ###< symfony/framework-bundle ###
 
 ###> symfony/webpack-encore-pack ###
