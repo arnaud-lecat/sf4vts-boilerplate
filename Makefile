@@ -5,7 +5,6 @@ run: clean
 	docker-compose exec app composer install
 	docker-compose exec app composer reset
 
-
 clean:
 	docker-compose down --volumes
 
