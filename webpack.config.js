@@ -5,6 +5,7 @@ let ExtractTextPlugin       = require("extract-text-webpack-plugin");
 let PurgeCssPlugin          = require('purgecss-webpack-plugin');
 let FaviconsWebpackPlugin   = require('favicons-webpack-plugin');
 let CopyWebpackPlugin       = require('copy-webpack-plugin');
+let { VueLoaderPlugin }     = require('vue-loader');
 
 // https://github.com/FullHuman/purgecss#extractor
 Encore.setOutputPath('public/build/')
@@ -23,6 +24,9 @@ Encore.setOutputPath('public/build/')
     .enableVersioning(Encore.isProduction())
     .enableSourceMaps(!Encore.isProduction())
     .enableVueLoader()
+    .addPlugin(
+        new VueLoaderPlugin()
+    )
     .addPlugin(
         new CopyWebpackPlugin([
             {
