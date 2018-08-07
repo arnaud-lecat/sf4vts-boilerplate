@@ -97,7 +97,7 @@ class User implements AdvancedUserInterface, \Serializable
         return $this->lastName;
     }
 
-    public function setLastname($firstName)
+    public function setLastname($lastName)
     {
         $this->lastName = $lastName;
     }
