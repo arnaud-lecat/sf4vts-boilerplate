@@ -1,12 +1,15 @@
 # docker-compose.yaml
-version: '3'
+version: '3.7'
 
 services:
     app:
         build:   { context: . }
         ports:   [ '8000:8000' ]
-        links:   [ database ]
         volumes: [ '.:/www' ]
+        networks:
+            - db-network
+        depends_on:
+            - database
 
     database:
         image: mariadb
@@ -17,6 +20,11 @@ services:
             MYSQL_USER: admin
             MYSQL_PASSWORD: test
             MYSQL_DATABASE: sf4vts
+        networks:
+            - db-network
+
+networks:
+    db-network:
 
 volumes:
     database: ~
