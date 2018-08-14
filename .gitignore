@@ -15,3 +15,12 @@
 ###> symfony/web-server-bundle ###
 .web-server-pid
 ###< symfony/web-server-bundle ###
+
+###> IDE ###
+/.idea/
+###< IDE ###
+
+###> npm ###
+/package-lock.json
+###< npm ###
+
